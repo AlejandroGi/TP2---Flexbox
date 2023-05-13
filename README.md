@@ -3,3 +3,5 @@
 Estrucutra del header y navbar inicial.
 
 Estructura inicial de noticias.
+
+Estructura noticias completa para mobile first. (Seguir con los break)
