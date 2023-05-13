@@ -20,32 +20,35 @@
 
     <body>
 
-        <!--header-->
+        <!-------------------------Header------------------------->
         <header id="header" class="fixed-top">
             <div class="flex-container">
 
 
-                    <div class="flex-container-left">
-                        <button class="btn">
-                            <i class="fa fa-search"></i>
-                        </button>
+                <div class="flex-container-left">
+
+                    <button class="btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+
+                    <div class="logo">
+                        <img src="/imgs/logo.png">
                     </div>
 
+                </div>
 
-                    <div class="flex-container-mid">
 
-                        <div class="logo">
-                            <img src="/imgs/logo.png">
-                        </div>
-                        <div class="logo-mobile">
-                            <img src="/imgs/logo-mobile.png">
-                        </div>
+                <div class="flex-container-mid">
 
-        </div>
-                
-                
-<!--Si agrego un contenedor para desplazar isq o centro igual va a generar espacios relativos
-al tamaño de la pantalla cuando estire-->
+                    <div class="logo">
+                        <img src="/imgs/logo.png">
+                    </div>
+                    
+                    <div class="logo-mobile">
+                        <img src="/imgs/logo-mobile.png">
+                    </div>
+
+                </div>
 
                 <div class="flex-container-right">
 
@@ -54,34 +57,84 @@ al tamaño de la pantalla cuando estire-->
                     </button>
 
                     <nav class="navbar" >
-                        <ul class="hidden">
-                
-                          <li class="dropdown"><a href="#"><span>Home</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                            <ul>
-                              <li><a href="index.html">Ultimas Noticias</a></li>
-                              <li><a href="index-2.html">Policiales</a></li>
-                              <li><a href="index-3.html">Deportes</a></li>
-                              <li><a href="index-4.html">Politica</a></li>
-                              <li><a href="index-4.html">Tecno</a></li>
-                            </ul>
-                          </li>
-                
-                          <li><a class="nav-link scrollto" href="index.html#about">Ultimas Noticia</a></li>
-                          <li><a class="nav-link scrollto" href="index.html#services">Ciudad</a></li>
-                          <li><a class="nav-link scrollto" href="index.html#portfolio">Region</a></li>
-                          <li><a class="nav-link scrollto" href="index.html#team">Mundo</a></li>
+                        <ul>
+                            <li class="dropdown"><a href="#"><span>Secciones</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                <li><a href="index-2.html">Policiales</a></li>
+                                <li><a href="index-3.html">Deportes</a></li>
+                                <li><a href="index-4.html">Politica</a></li>
+                                <li><a href="index-4.html">Tecno</a></li>
+                                </ul>
+                            </li>
+                    
+                            <li><a class="nav-link scrollto" href="index.html#about">Ultimo Momento</a></li>
+                            <li><a class="nav-link scrollto" href="index.html#services">Ciudad</a></li>
+                            <li><a class="nav-link scrollto" href="index.html#portfolio">Region</a></li>
+                            <li><a class="nav-link scrollto" href="index.html#team">Mundo</a></li>
                         </ul>
                     </nav>
 
                 </div>
-
+                
 
             </div>
         </header>
 
 
-       
+        <!-------------------------Index------------------------->
+       <section id="index">
 
+            <div class="flex-container">
+                
+                <div class="date">
+                    <span>Miercoles, 17 de Mayo</span>
+                </div>
+
+                <div class="weather">
+                    <i class="fa fa-moon-o"></i>
+                    <span>14.7°, Rosario</span>
+                </div>
+
+            </div>
+            
+        </section>
+
+
+        <!-------------------------News------------------------->
+
+    <section id="news">
+        
+        <section class="flex-news-column-left">
+        <p>mensaje de prueba izquierda</p>
+        </section>
+
+        <section class="flex-news-column-mid">
+            <div class="text">
+                <span>tecnologia</span>
+            </div>
+
+            <h1 class="title">
+                A qué refiere el concepto de "caja negra" en la inteligencia artificial y por qué preocupa a los expertos
+            </h1>
+
+            <p class="subtitle">
+                Las nuevas capacidades de este tipo de tecnología han generado cuestionamientos sobre las diversas 
+                formas en las que puede impactar en la sociedad, desde sus alcances en el mercado laboral hasta el 
+                control de procesos de seguridad pública o el ámbito militar
+            </p>
+
+
+        </section>
+
+
+        <section class="flex-news-column-right">
+            <p>mensaje de prueba derecha</p>
+        </section>
+
+    </section>
+
+
+        
     </body>
 </html>
 

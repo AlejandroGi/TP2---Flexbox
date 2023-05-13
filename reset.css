@@ -7,7 +7,9 @@
 
     /* Colores */
     --color-white: #f3eae8;
-
+    --color-grey: #e9e8e8;
+    --color-black: #1a1f24;
+    
     --color-links: #0ea2bd;
     --color-links-hover: #1ec3e0;
     --color-primary: #0ea2bd;
