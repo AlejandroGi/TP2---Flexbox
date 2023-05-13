@@ -9,7 +9,7 @@ body {
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
-    color: var(--color-primary-light);
+    color: var(--color-primary-dark);
   }
   
   
@@ -255,7 +255,7 @@ body {
   display:flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 
@@ -285,7 +285,6 @@ body {
 
 #news .flex-news-column-mid .title{
 
-  color: var(--color-primary-dark);
   font-size: 2rem;
   font-weight: 700;
   
@@ -301,32 +300,118 @@ body {
   text-align:justify;
   text-justify:inter-word;
 
+  font-family: var(--font-primary);
   font-weight: 550;
   margin-bottom:  1rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
+
+#news .flex-news-column-mid article p{
+  font-size: 0.8rem;
+  color:var(--color-secondary);
+  font-family: var(--font-secondary);
+
+  padding-bottom: 10px;
+  border-bottom-color: var(--color-primary);
+  border-bottom-width: 0.1rem;
+  border-bottom-style:groove;
+
+}
+
+#news .flex-news-column-mid p{
+  font-size: 1rem;
+  color:var(--color-secondary);
+
+  font-family: var(--font-primary);
+  text-align:justify;
+  text-justify:inter-word;
+  line-height:1.3rem;
+
+
+  margin: 10px 0px;
+}
+
+#news .flex-news-column-mid p span{  /* porque aca sin el .p?*/
+  font-weight: 550;
+}
+
+#news .flex-news-column-mid h2{
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 550;
+  
+  text-align: left;
+
+  margin: 15px 0px;
+}
+
+#news .flex-news-column-mid .news-topics{
+  width: 100%;  /* Como tengo el contenido justificado necesito ocupar el 100% */
+  
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:left;
+
+  margin-top: 12px;
+
+}
+
+#news .flex-news-column-mid .news-topics h3{
+  width:100%;
+  font-size: 1.2rem;
+  font-weight: 550;
+  
+  text-align: left;
+
+  margin: 15px 0px;
+
+  padding-bottom: 10px;
+  border-bottom-color: var(--color-primary);
+  border-bottom-width: 0.12rem;
+  border-bottom-style:double;
+}
+
+#news .flex-news-column-mid .news-topics ul{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:left;
+
+}
+
+#news .flex-news-column-mid .news-topics ul li a{
+  font-size: 0.9rem;
+
+  line-height: 1rem;
+  border: solid 0.125rem ;
+  border-radius: 1.25rem;
+
+  color: var(--color-primary-dark);
+
+  margin-right: 0.3rem;
+  margin-bottom: 0.5rem;
+  
+  padding: 0.625rem 1rem;
+}
 
 @media (min-width: 800px) and (max-width: 1280px) {
   #news{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    width: 100%;
+    flex-flow: row nowrap;
+    
   }
 
   #news .flex-news-column-left{
     display:flex;
-    flex-flow: wrap nowrap;
-    justify-content: center;
-
+    flex-flow: row nowrap;
+    width: 800px;
   }
 
   #news .flex-news-column-mid{
     display:flex;
     flex-flow: wrap nowrap;
     justify-content: center;
-    flex: 80%;               /* No me queda claro como divir las "colums"*/
+     /* No me queda claro como divir las "colums"*/
 
   }
 
@@ -338,28 +423,27 @@ body {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-around;
-      width: 100%;
     }
 
     #news .flex-news-column-left{
       display:flex;
       flex-flow: wrap nowrap;
       justify-content: center;
-  
     }
     
+    #news .flex-news-column-mid{
+      display:flex;
+      flex-flow: wrap nowrap;
+      justify-content:center;
+      flex-basis: 70%;
 
-    #news .flex-news-column-left{
-    display:flex;
-    flex-flow: wrap nowrap;
-    justify-content: center;
-  
     }
 
+    
     #news .flex-news-column-right{
       display:flex;
       flex-flow: wrap nowrap;
       justify-content: center;
-  
+
     }
   }
