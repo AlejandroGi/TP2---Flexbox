@@ -27,7 +27,15 @@ body {
 #header {
   background-color: var(--color-primary-dark);
   color: var(--color-white);
-  }
+}
+
+#header{
+  /* overflow:hidden; */ /*El overflow hidden evita que se vean los componentes que exceden al contenedor*/
+  position: sticky; 
+  top: 0;
+  width: 100%;
+}
+
   
 #header .flex-container{
   
@@ -98,9 +106,7 @@ body {
 
 @media (min-width: 1280px){
 
-  #header{
-    position: relative;
-  }
+
 
   #header .flex-container .flex-container-left{
     display: flex;
@@ -115,6 +121,7 @@ body {
   }
 
   
+
   #header .flex-container .flex-container-mid .logo{
     display: none;
   }
@@ -123,22 +130,13 @@ body {
     display: none;
   }
 
- 
 
   #header .flex-container .flex-container-right .btn{
     display:none;
   }
 
-
   #header .flex-container .flex-container-right .navbar{
     display:flex;
-  }
-
-  #header .flex-container .flex-container-right .navbar ul{
-    display:flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
   }
 
   #header .flex-container .flex-container-right .navbar a{
@@ -149,12 +147,19 @@ body {
     color: var(--color-white);
     padding: 0 10px;
   }
+  
+  #header .flex-container .flex-container-right .navbar ul{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
 
+ 
   #header .flex-container .flex-container-right .navbar .dropdown ul {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: left;  /*porque no va a la izquierda?*/
 
     position: absolute; 
 
@@ -201,60 +206,56 @@ body {
 
 
 #index .flex-container .date{
-
-  /*
-  display:flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;*/  /* !! Flex-start o start? */
-
-  /* !! que no tenga propiedad es lo mismo que inline? */
-
   font-size: 0.9rem;
   font-weight: 550;
   text-transform: uppercase;
-
-
 }
 
 #index .flex-container .weather{
-
   display:flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   margin: 20px 20px ;
-  
 }
 
 #index .flex-container .weather span{
-
   font-size: 0.9rem;
   font-weight: 550;
   padding-left: 10px;
 }
+
 
 /*--------------------------------------------------------------
 # News
 --------------------------------------------------------------*/
 #news{
   display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
 
 }
+
 
 #news .flex-news-column-left{
   display: none;
 }
+#news .flex-news-column-left img{
+  object-fit:fill;
+}
+
+
 #news .flex-news-column-right{
   display:none;
 }
-
+#news .flex-news-column-right img{
+  object-fit:fill;
+}
 
 
 #news .flex-news-column-mid{
   display:flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: left;
   padding: 0 20px;
 }
 
@@ -306,6 +307,11 @@ body {
   letter-spacing: 1px;
 }
 
+#news .flex-news-column-mid article{
+  width: 100%;
+}
+
+
 
 #news .flex-news-column-mid article p{
   font-size: 0.8rem;
@@ -353,7 +359,7 @@ body {
   flex-flow: row wrap;
   justify-content:left;
 
-  margin-top: 12px;
+  margin: 12px 0px;
 
 }
 
@@ -394,56 +400,135 @@ body {
   padding: 0.625rem 1rem;
 }
 
+#news .flex-news-column-mid .news-topics ul li:hover a{
+  color: var(--color-white);
+  background-color: var(--color-primary-dark);
+}
+
+
 @media (min-width: 800px) and (max-width: 1280px) {
-  #news{
-    display: flex;
-    flex-flow: row nowrap;
-    
-  }
 
   #news .flex-news-column-left{
     display:flex;
-    flex-flow: row nowrap;
-    width: 800px;
+    width: 18vw; 
   }
 
   #news .flex-news-column-mid{
     display:flex;
     flex-flow: wrap nowrap;
-    justify-content: center;
-     /* No me queda claro como divir las "colums"*/
-
+    justify-content: left;
+    width: 80vw; /*La idea es que sea siempre ocupe el 80% de la pantalla*/
+    padding: 0px 15px 0px 0px;
   }
+
+
 
 }
 
   @media (min-width: 1280px){
 
-    #news{
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-    }
 
     #news .flex-news-column-left{
       display:flex;
-      flex-flow: wrap nowrap;
-      justify-content: center;
+      width: 18vw; 
     }
-    
+
     #news .flex-news-column-mid{
       display:flex;
-      flex-flow: wrap nowrap;
-      justify-content:center;
-      flex-basis: 70%;
-
+      flex-flow: row wrap;
+      
+      width: 60vw;
     }
 
     
     #news .flex-news-column-right{
       display:flex;
-      flex-flow: wrap nowrap;
-      justify-content: center;
-
+      width: 18vw; 
     }
   }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+
+  padding-top: 30px;
+  /* background-color: var(--color-primary-dark); */ /*!! No puedo cambier el coor de la las letras*/
+  color:var(--color-white);
+}
+
+#footer .flex-footer-colum-left {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:center;
+  align-items: center;
+  background-color: red;
+}
+
+
+#footer .flex-footer-colum-left .div img{ 
+  height:20%;
+}
+
+#footer .flex-footer-colum-mid h3{
+  color: var(--color-white);
+}
+
+#footer .social-icons {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-around;
+	padding:30px;
+  text-align: center;
+  
+}
+
+#footer .social-icons ul li a i{
+	color:#fff;   /*aca deberia cambiar el color de los a, pero no lo hace*/
+  line-height:30px;
+  font-size:30px;
+  margin: 0 5px;
+
+}
+
+#footer .flex-footer-colum-mid h3{
+  color: var(--color-white);
+}
+
+#footer .flex-footer-colum-mid ul li{
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: left;
+  align-items: center;
+}
+
+#footer .flex-footer-colum-mid ul li a{
+  color: var(--color-white);
+  font-size: rem;
+}
+
+#footer .flex-footer-colum-rigt{
+  padding-right: 20px;
+
+}
+
+
+#footer .flex-footer-colum-rigt iframe{
+  width: 100%;
+}
+
+#footer .flex-footer-colum-rigt button{
+	padding:30px;
+	background-color: var(--color-primary-dark);
+  text-align: center;
+
+	color:red;   /*aca deberia cambiar el color de los a, pero no lo hace*/
+  line-height:30px;
+  font-size:30px;
+  margin: 0 5px;
+}
+
