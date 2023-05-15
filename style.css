@@ -247,143 +247,52 @@ body {
 #news .flex-news-column-right{
   display:none;
 }
-#news .flex-news-column-right img{
-  object-fit:fill;
-}
 
 
 #news .flex-news-column-mid{
   display:flex;
   flex-flow: row wrap;
-  justify-content: left;
+  justify-content: center;
   padding: 0 20px;
 }
 
-
-
-
-#news .flex-news-column-mid .text{
-
-  align-items: center;
-  margin: 15px 0px ;
-  font-weight: 600 ;
-  
-  border-top-color: var(--color-primary);
-  border-top-width: 0.3rem;  /*Necesito width y style para funcionar - lo cual es logico*/ 
-  border-top-style:double;
-
-
-  color: var(--color-secondary-light);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-
-
-  border-bottom-color: var(--color-primary);
-  border-bottom-width: 0.3rem;
-  border-bottom-style:double;
-
-}
-
-#news .flex-news-column-mid .title{
-
-  font-size: 2rem;
-  font-weight: 700;
-  
-  text-align:justify;
-  text-justify:inter-word;
-
-  padding-bottom:  1.25rem;
-}
-
-#news .flex-news-column-mid .subtitle{
-  color: var(--color-secondary-dark);
-  
-  text-align:justify;
-  text-justify:inter-word;
-
-  font-family: var(--font-primary);
-  font-weight: 550;
-  margin-bottom:  1rem;
-  letter-spacing: 1px;
-}
-
 #news .flex-news-column-mid article{
-  width: 100%;
-}
-
-
-
-#news .flex-news-column-mid article p{
-  font-size: 0.8rem;
-  color:var(--color-secondary);
-  font-family: var(--font-secondary);
-
-  padding-bottom: 10px;
-  border-bottom-color: var(--color-primary);
-  border-bottom-width: 0.1rem;
-  border-bottom-style:groove;
-
-}
-
-#news .flex-news-column-mid p{
-  font-size: 1rem;
-  color:var(--color-secondary);
-
-  font-family: var(--font-primary);
-  text-align:justify;
-  text-justify:inter-word;
-  line-height:1.3rem;
-
-
-  margin: 10px 0px;
-}
-
-#news .flex-news-column-mid p span{  /* porque aca sin el .p?*/
-  font-weight: 550;
-}
-
-#news .flex-news-column-mid h2{
-  width: 100%;
-  font-size: 1.1rem;
-  font-weight: 550;
-  
-  text-align: left;
-
-  margin: 15px 0px;
-}
-
-#news .flex-news-column-mid .news-topics{
-  width: 100%;  /* Como tengo el contenido justificado necesito ocupar el 100% */
-  
   display:flex;
   flex-flow: row wrap;
-  justify-content:left;
+  justify-content: left;
 
-  margin: 12px 0px;
+  font-size: 1rem;
 
-}
+  line-height: 1rem;
+  border: solid 0.125rem ;
+  border-radius: 1.25rem;
 
-#news .flex-news-column-mid .news-topics h3{
-  width:100%;
-  font-size: 1.2rem;
-  font-weight: 550;
+  color: var(--color-primary-dark);
+
+  margin-right: 0.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   
-  text-align: left;
+  padding: 0.6rem 1rem;
+  
 
-  margin: 15px 0px;
-
-  padding-bottom: 10px;
-  border-bottom-color: var(--color-primary);
-  border-bottom-width: 0.12rem;
-  border-bottom-style:double;
 }
+
+#news .flex-news-column-mid img{
+  border-radius: 5px;
+  height: 30vw;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
 
 #news .flex-news-column-mid .news-topics ul{
   display:flex;
   flex-flow: row wrap;
-  justify-content:left;
+  justify-content:center;
 
 }
+
 
 #news .flex-news-column-mid .news-topics ul li a{
   font-size: 0.9rem;
@@ -397,13 +306,40 @@ body {
   margin-right: 0.3rem;
   margin-bottom: 0.5rem;
   
-  padding: 0.625rem 1rem;
+  padding: 0.5rem 0.7rem;
 }
 
-#news .flex-news-column-mid .news-topics ul li:hover a{
+#news .flex-news-column-mid  .news-topics ul li:hover a{
   color: var(--color-white);
   background-color: var(--color-primary-dark);
 }
+
+#news .flex-news-column-mid h2{
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  
+  text-align:justify;
+  text-justify:inter-word;
+  line-height:1.3rem;
+
+  padding: 1.1rem 0;
+}
+
+
+#news .flex-news-column-mid p{
+  font-size: 0.85rem;
+
+  
+  color:var(--color-secondary);
+  font-family: var(--font-secondary);
+
+  text-align:justify;
+  text-justify:inter-word;
+
+  padding-bottom: 10px;
+}
+
 
 
 @media (min-width: 800px) and (max-width: 1280px) {
@@ -421,9 +357,12 @@ body {
     padding: 0px 15px 0px 0px;
   }
 
-
+  #news .flex-news-column-mid article{
+    width: 25vw;
+  }
 
 }
+
 
   @media (min-width: 1280px){
 
@@ -443,7 +382,17 @@ body {
     
     #news .flex-news-column-right{
       display:flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: baseline;
       width: 18vw; 
+    }
+    
+    #news .flex-news-column-right h1{
+      color:var(--color-black);
+      font-size: 3rem;
+      -webkit-transform: rotate(90deg); /*Para chrome*/
+      -moz-transform: rotate(90deg); /*Para firefox*/
     }
   }
 
@@ -454,81 +403,141 @@ body {
 #footer{
   display: flex;
   flex-flow: row wrap;
-  justify-content:space-between;
+  justify-content:space-evenly;
 
-  padding-top: 30px;
-  /* background-color: var(--color-primary-dark); */ /*!! No puedo cambier el coor de la las letras*/
+  padding-top: 15px;
+  background-color: var(--color-primary-dark); /*!! No puedo cambier el coor de la las letras*/
   color:var(--color-white);
 }
 
-#footer .flex-footer-colum-left {
+#footer .flex-footer-colum-left{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#footer .flex-footer-colum-left .logo-mobile img{ 
+  margin-bottom: 15px;
+}
+
+#footer .flex-footer-colum-left .social-icons ul{
   display: flex;
   flex-flow: row nowrap;
-  justify-content:center;
-  align-items: center;
-  background-color: red;
+  margin-bottom: 20px;
 }
 
-
-#footer .flex-footer-colum-left .div img{ 
-  height:20%;
-}
-
-#footer .flex-footer-colum-mid h3{
-  color: var(--color-white);
-}
-
-#footer .social-icons {
-  display:flex;
-  flex-flow:row wrap;
-  justify-content: space-around;
-	padding:30px;
-  text-align: center;
-  
-}
-
-#footer .social-icons ul li a i{
-	color:#fff;   /*aca deberia cambiar el color de los a, pero no lo hace*/
-  line-height:30px;
+#footer .flex-footer-colum-left .social-icons ul li a i{
+	color:var(--color-white);   
   font-size:30px;
   margin: 0 5px;
 
 }
 
-#footer .flex-footer-colum-mid h3{
-  color: var(--color-white);
+
+#footer .flex-footer-colum-left .social-icons ul li:nth-child(1) a:hover i{
+  color: #0077b5;
+}
+#footer .flex-footer-colum-left .social-icons ul li:nth-child(2) a:hover i{
+  color: #76c3fd;
+}
+#footer .flex-footer-colum-left .social-icons ul li:nth-child(3) a:hover i{
+  color: #E4405F;
+}
+#footer .flex-footer-colum-left .social-icons ul li:nth-child(4) a:hover i{
+  color: #ff0202;
+}
+#footer .flex-footer-colum-left .social-icons ul li:nth-child(5) a:hover i{
+  color: #812fed;
+}
+#footer .flex-footer-colum-left .social-icons ul li:nth-child(6) a:hover i{
+  color: #ff00c8;
 }
 
-#footer .flex-footer-colum-mid ul li{
+
+
+
+#footer .flex-footer-colum-mid{
   display:flex;
-  flex-flow:row nowrap;
-  justify-content: left;
-  align-items: center;
+  flex-flow: column nowrap; /* nowarp o wrap? */
+  justify-content: space-around;
+
+  margin-top: 10px;
 }
+#footer .flex-footer-colum-mid div{
+
+  margin-top:20px;
+  margin-bottom: 15px;
+
+}
+
+
+#footer .flex-footer-colum-mid div h3{
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size:30px;
+  
+  margin-bottom: 1.0rem;
+  
+}
+
+#footer .flex-footer-colum-mid div ul{
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  line-height:1.6rem;
+
+}
+
 
 #footer .flex-footer-colum-mid ul li a{
   color: var(--color-white);
-  font-size: rem;
+  font-size: 1.2rem;
+}
+
+#footer .flex-footer-colum-mid div ul li:hover a{
+  color:var(--color-primary-light);
 }
 
 #footer .flex-footer-colum-rigt{
-  padding-right: 20px;
-
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px 0px
 }
 
+#footer .flex-footer-colum-rigt h3{
+  color: var(--color-white);
+  font-size:25px;
+  font-family: var(--font-secondary);
+
+  align-self: center;
+
+  margin: 10px 0px;
+}
 
 #footer .flex-footer-colum-rigt iframe{
   width: 100%;
 }
 
-#footer .flex-footer-colum-rigt button{
-	padding:30px;
-	background-color: var(--color-primary-dark);
-  text-align: center;
+#footer .flex-footer-colum-rigt div{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 
-	color:red;   /*aca deberia cambiar el color de los a, pero no lo hace*/
-  line-height:30px;
-  font-size:30px;
-  margin: 0 5px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 2px solid;
 }
 
+#footer .flex-footer-colum-rigt div button{
+	cursor: pointer;
+  font-size:20px;
+  padding:10px;
+
+  line-height:30px;
+}
+
+#footer .flex-footer-colum-rigt div:hover{
+  color: var(--color-primary-dark);
+  background-color: var(--color-white);
+}
