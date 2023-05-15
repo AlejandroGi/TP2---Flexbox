@@ -27,26 +27,22 @@ body {
 #header {
   background-color: var(--color-primary-dark);
   color: var(--color-white);
-}
 
-#header{
-  /* overflow:hidden; */ /*El overflow hidden evita que se vean los componentes que exceden al contenedor*/
   position: sticky; 
   top: 0;
   width: 100%;
+
+   /* overflow:hidden; */ /*El overflow hidden evita que se vean los componentes que exceden al contenedor*/
 }
 
   
 #header .flex-container{
-  
   display: flex;
   flex-flow: row nowrap;  /* flow = direction (fila o colum) + wrap (normal o invertido) -- Si no entra salta a la siguiente linea */
   justify-content: space-between;
   padding: 0 20px;
   align-items: center;
 }
-
-
 
 #header .flex-container .flex-container-left .btn i{
   cursor: pointer;
@@ -68,7 +64,6 @@ body {
 #header .flex-container .flex-container-mid .logo-mobile{ 
   width: 50%;
 }
-
 #header .flex-container .flex-container-mid .logo{
   display: none; /*"Elimina el bloque"*/
 }
@@ -110,7 +105,7 @@ body {
 
   #header .flex-container .flex-container-left{
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: flex-start;
   }
 
@@ -125,15 +120,13 @@ body {
   #header .flex-container .flex-container-mid .logo{
     display: none;
   }
-
   #header .flex-container .flex-container-mid .logo-mobile{
     display: none;
   }
-
-
   #header .flex-container .flex-container-right .btn{
     display:none;
   }
+
 
   #header .flex-container .flex-container-right .navbar{
     display:flex;
@@ -141,10 +134,11 @@ body {
 
   #header .flex-container .flex-container-right .navbar a{
     font-size: 1.25rem;
-    font-family: var(--font-primary);
     font-weight: 700;
+    font-family: var(--font-primary);
     
     color: var(--color-white);
+
     padding: 0 10px;
   }
   
@@ -170,7 +164,6 @@ body {
 
   #header .flex-container .flex-container-right .navbar .dropdown ul li {
     display: none;
-    
   }
 
   #header .flex-container .flex-container-right .navbar .dropdown:hover > ul{
@@ -204,7 +197,6 @@ body {
 }
 
 
-
 #index .flex-container .date{
   font-size: 0.9rem;
   font-weight: 550;
@@ -215,12 +207,14 @@ body {
   display:flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  margin: 20px 20px ;
+
+  margin: 20px 20px; 
 }
 
 #index .flex-container .weather span{
   font-size: 0.9rem;
   font-weight: 550;
+
   padding-left: 10px;
 }
 
@@ -232,7 +226,6 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-
 }
 
 
@@ -244,11 +237,6 @@ body {
 }
 
 
-#news .flex-news-column-right{
-  display:none;
-}
-
-
 #news .flex-news-column-mid{
   display:flex;
   flex-flow: row wrap;
@@ -256,10 +244,29 @@ body {
   padding: 0 20px;
 }
 
+#news .flex-news-column-mid div{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#news .flex-news-column-mid div span{
+  font-size: 1.6rem;
+  font-weight: 700;
+  
+  text-align:justify;
+  text-justify:inter-word;
+
+  padding:  1.25rem 0rem;
+
+  color: var(--color-primary-dark);
+}
+
+
 #news .flex-news-column-mid article{
   display:flex;
   flex-flow: row wrap;
-  justify-content: left;
+  justify-content:space-around;
 
   font-size: 1rem;
 
@@ -269,10 +276,10 @@ body {
 
   color: var(--color-primary-dark);
 
-  margin-right: 0.3rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  
+  margin-right: 0.3rem;
+
   padding: 0.6rem 1rem;
   
 
@@ -280,7 +287,7 @@ body {
 
 #news .flex-news-column-mid img{
   border-radius: 5px;
-  height: 30vw;
+  height: 23vw;
   object-fit: cover;
   margin-bottom: 10px;
 }
@@ -307,6 +314,8 @@ body {
   margin-bottom: 0.5rem;
   
   padding: 0.5rem 0.7rem;
+
+  
 }
 
 #news .flex-news-column-mid  .news-topics ul li:hover a{
@@ -338,9 +347,47 @@ body {
   text-justify:inter-word;
 
   padding-bottom: 10px;
+  
+
+}
+#news .flex-news-column-mid .read-more{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  font-style: var(--font-primary);
+  font-weight: 600;
+  color: var(--color-primary);
+
+  width: 100%;
+  padding-top:10px;
+
+  border-top-color: var(--color-primary-light);
+  border-top-style: solid;
+  border-top-width: 2px;
+
+}
+
+#news .flex-news-column-mid .read-more:hover{
+
+  border-top-color: var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-primary-light);
+
+  border: solid 0.125rem ;
+  border-radius: 1.25rem;
+
+  padding-bottom:10px;
 }
 
 
+
+#news .flex-news-column-right{
+  display:none;
+}
+#news .flex-news-column-right img{
+  object-fit:fill;
+}
 
 @media (min-width: 800px) and (max-width: 1280px) {
 
@@ -351,7 +398,7 @@ body {
 
   #news .flex-news-column-mid{
     display:flex;
-    flex-flow: wrap nowrap;
+    flex-flow: row wrap;
     justify-content: left;
     width: 80vw; /*La idea es que sea siempre ocupe el 80% de la pantalla*/
     padding: 0px 15px 0px 0px;
@@ -364,37 +411,31 @@ body {
 }
 
 
-  @media (min-width: 1280px){
+@media (min-width: 1280px){
 
-
-    #news .flex-news-column-left{
-      display:flex;
-      width: 18vw; 
-    }
-
-    #news .flex-news-column-mid{
-      display:flex;
-      flex-flow: row wrap;
-      
-      width: 60vw;
-    }
-
-    
-    #news .flex-news-column-right{
-      display:flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: baseline;
-      width: 18vw; 
-    }
-    
-    #news .flex-news-column-right h1{
-      color:var(--color-black);
-      font-size: 3rem;
-      -webkit-transform: rotate(90deg); /*Para chrome*/
-      -moz-transform: rotate(90deg); /*Para firefox*/
-    }
+  #news .flex-news-column-left{
+    display:flex;
+    width: 18vw; 
   }
+
+  #news .flex-news-column-mid{
+    display:flex;
+    flex-flow: row wrap;
+    
+    width: 60vw;
+  }
+
+  #news .flex-news-column-mid article{
+    width: 25vw;
+  }
+
+
+  #news .flex-news-column-right{
+    display:flex;
+    width: 18vw; 
+  }
+  
+}
 
 /*--------------------------------------------------------------
 # Footer
@@ -402,22 +443,26 @@ body {
 
 #footer{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content:space-evenly;
 
-  padding-top: 15px;
   background-color: var(--color-primary-dark); /*!! No puedo cambier el coor de la las letras*/
   color:var(--color-white);
 }
 
 #footer .flex-footer-colum-left{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+#footer .flex-footer-colum-left .logo-mobile{
+  display: flex;
   justify-content: center;
 }
-
 #footer .flex-footer-colum-left .logo-mobile img{ 
   margin-bottom: 15px;
+  width: 100%;
 }
 
 #footer .flex-footer-colum-left .social-icons ul{
@@ -457,24 +502,22 @@ body {
 
 
 #footer .flex-footer-colum-mid{
-  display:flex;
-  flex-flow: column nowrap; /* nowarp o wrap? */
-  justify-content: space-around;
 
-  margin-top: 10px;
+  display:none;
+
 }
 #footer .flex-footer-colum-mid div{
 
-  margin-top:20px;
+  margin-top:10px;
   margin-bottom: 15px;
-
 }
 
 
 #footer .flex-footer-colum-mid div h3{
   color: var(--color-white);
   font-family: var(--font-primary);
-  font-size:30px;
+  font-size:23px;
+  font-weight: 550;
   
   margin-bottom: 1.0rem;
   
@@ -498,16 +541,25 @@ body {
   color:var(--color-primary-light);
 }
 
-#footer .flex-footer-colum-rigt{
+
+
+#footer .flex-footer-colum-right{
   display:flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 15px 0px
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  
+  margin-bottom: 10px;
+  padding: 0 10px;
+  
+  
 }
 
-#footer .flex-footer-colum-rigt h3{
+#footer .flex-footer-colum-right h3{
+  text-align: center;
   color: var(--color-white);
   font-size:25px;
+  font-weight: 550;
   font-family: var(--font-secondary);
 
   align-self: center;
@@ -515,21 +567,24 @@ body {
   margin: 10px 0px;
 }
 
-#footer .flex-footer-colum-rigt iframe{
-  width: 100%;
+#footer .flex-footer-colum-right iframe{
+  width:100%;
+  
 }
 
-#footer .flex-footer-colum-rigt div{
+#footer .flex-footer-colum-right div{
   display: flex;
   justify-content: center;
   margin-top: 10px;
 
-  box-sizing: border-box;
+  width: 100%;
+  
+
   border-radius: 15px;
   border: 2px solid;
 }
 
-#footer .flex-footer-colum-rigt div button{
+#footer .flex-footer-colum-right div button{
 	cursor: pointer;
   font-size:20px;
   padding:10px;
@@ -537,7 +592,51 @@ body {
   line-height:30px;
 }
 
-#footer .flex-footer-colum-rigt div:hover{
+#footer .flex-footer-colum-right div:hover{
   color: var(--color-primary-dark);
   background-color: var(--color-white);
+}
+
+
+@media (min-width: 800px) and (max-width: 1280px) {
+
+
+
+  #footer {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  #footer .flex-footer-colum-left{
+    margin-right: 10px;
+  }
+  #footer .flex-footer-colum-mid{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-around;
+    align-items: center;
+  }
+
+  #footer .flex-footer-colum-mid div{
+    padding: 0px 30px;
+  }
+}
+
+@media (min-width: 1280px){
+
+  #footer {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  #footer .flex-footer-colum-mid{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-around;
+    align-items: center;
+  }
+
+  #footer .flex-footer-colum-mid div{
+    padding: 0px 30px;
+  }
 }
