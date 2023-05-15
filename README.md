@@ -1,9 +1,1 @@
-# TP2---Flexbox
-
-Estrucutra del header y navbar inicial.
-
-Estructura inicial de noticias.
-
-Estructura noticias completa para mobile first. (Seguir con los break)
-
-Pulir detalles en general
+# TP2--Clase 6 --> https://alejandrogi.github.io/TP2---Flexbox/
